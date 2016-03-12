@@ -1,0 +1,3 @@
+config.js
+jspm_packages/**/*.js
+node_modules/**/*.js
