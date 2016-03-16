@@ -1,6 +1,6 @@
 {
   "name": "singpath-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Shared components for Class Mentors and Singpath",
   "repository": "github:singpath/singpath-core",
   "scripts": {
