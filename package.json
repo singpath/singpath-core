@@ -5,7 +5,7 @@
   "repository": "github:singpath/singpath-core",
   "scripts": {
     "lint": "eslint src/ && jscs src/",
-    "post-install": "jspm install",
+    "postinstall": "jspm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
