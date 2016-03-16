@@ -1,7 +1,7 @@
 {
   "name": "singpath-core",
   "version": "0.1.0",
-  "description": "",
+  "description": "Shared components for Class Mentors and Singpath",
   "repository": "github:singpath/singpath-core",
   "scripts": {
     "lint": "eslint src/ && jscs src/",
