@@ -51,6 +51,10 @@ System.config({
       "angular": "github:angular/bower-angular@1.5.0",
       "css": "github:systemjs/plugin-css@0.1.20"
     },
+    "github:firebase/angularfire@1.1.4": {
+      "angular": "github:angular/bower-angular@1.5.0",
+      "firebase": "github:firebase/firebase-bower@2.4.1"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
