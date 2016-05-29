@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Singpath-Core example</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  </head>
+  <body>
+    <demo layout="row"></demo>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="jspm.config.js"></script>
+
+		<script>
+			window.SINGPATH = {
+				firebaseId: 'singpath-play'
+			};
+
+      System.import(
+        './app.js'
+      ).catch(
+        console.error.bind(console)
+      );
+		</script>
+  
+  </body>
+</html>

@@ -2,53 +2,57 @@
   "name": "singpath-core",
   "version": "0.3.0",
   "description": "Shared components for Class Mentors and Singpath",
-  "repository": "github:singpath/singpath-core",
-  "scripts": {
-    "lint": "eslint src/ && jscs src/",
-    "postinstall": "jspm install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "src/singpath-core/index.js",
+  "config": {
+    "port": 8082,
+    "build_dir": "dist/",
+    "build_assets_dir": "assets/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta8",
+    "compression": "^1.6.1",
     "eslint": "^1.10.3",
+    "finalhandler": "^0.4.1",
+    "http2": "^3.3.2",
     "jscs": "^2.9.0",
-    "jspm": "^0.17.0-beta.11"
+    "jspm": "0.17.0-beta.16",
+    "mocha": "^2.4.5",
+    "morgan": "^1.7.0",
+    "npm-run-all": "^1.5.3",
+    "serve-static": "^1.10.2",
+    "source-map-support": "^0.4.0"
   },
-  "registry": "jspm",
-  "directories": {
-    "lib": "src"
-  },
-  "main": "src/index.js",
   "jspm": {
+    "name": "singpath-core",
     "main": "index.js",
-    "format": "esm",
     "directories": {
-      "lib": "src"
+      "baseURL": "src",
+      "lib": "src/singpath-core"
     },
+    "dependencies": {},
     "devDependencies": {
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "css": "github:systemjs/plugin-css@^0.1.20",
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.8",
-      "text": "github:systemjs/plugin-text@^0.0.7"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.11"
     },
     "peerDependencies": {
       "ace": "github:ajaxorg/ace-builds@^1.2.3",
-      "angular": "github:angular/bower-angular@^1.5.0",
-      "angular-animate": "github:angular/bower-angular-animate@^1.5.0",
+      "angular": "github:angular/bower-angular@^1.5.5",
+      "angular-animate": "github:angular/bower-angular-animate@^1.5.5",
       "angular-loading-bar": "github:chieffancypants/angular-loading-bar@^0.8.0",
-      "angular-material": "github:angular/bower-material@^1.0.6",
-      "angular-messages": "github:angular/bower-angular-messages@^1.5.0",
-      "angular-route": "github:angular/bower-angular-route@^1.5.0",
-      "angularfire": "github:firebase/angularfire@^1.1.4",
-      "core-js": "npm:core-js@^1.1.4",
+      "angular-material": "github:angular/bower-material@1.0.6",
+      "angular-messages": "github:angular/bower-angular-messages@^1.5.5",
+      "angular-route": "github:angular/bower-angular-route@^1.5.5",
+      "angularfire": "github:firebase/angularfire@1.1.4",
+      "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",
+      "chai": "npm:chai@^3.5.0",
       "cryptojs": "github:sytelus/cryptojs@^3.1.2",
+      "css": "github:systemjs/plugin-css@^0.1.22",
       "firebase": "github:firebase/firebase-bower@^2.4.1",
-      "fs": "github:jspm/nodelibs-fs@^0.2.0-alpha",
-      "path": "github:jspm/nodelibs-path@^0.2.0-alpha",
-      "process": "github:jspm/nodelibs-process@^0.2.0-alpha"
+      "process": "github:jspm/nodelibs-process@^0.2.0-alpha",
+      "sinon": "npm:sinon@^1.17.4",
+      "sinon-chai": "npm:sinon-chai@^2.8.0",
+      "text": "github:systemjs/plugin-text@^0.0.8",
+      "util": "github:jspm/nodelibs-util@^0.2.0-alpha"
     },
     "overrides": {
       "github:ajaxorg/ace-builds@1.2.3": {
@@ -56,6 +60,9 @@
         "format": "global",
         "directories": {
           "lib": "src-noconflict"
+        },
+        "map": {
+          "ace": "."
         },
         "meta": {
           "ace.js": {
@@ -70,7 +77,7 @@
           }
         }
       },
-      "github:angular/bower-angular-animate@1.5.0": {
+      "github:angular/bower-angular-animate@1.5.6": {
         "main": "angular-animate",
         "registry": "jspm",
         "dependencies": {
@@ -85,7 +92,7 @@
           }
         }
       },
-      "github:angular/bower-angular-aria@1.5.0": {
+      "github:angular/bower-angular-aria@1.5.6": {
         "main": "angular-aria",
         "registry": "jspm",
         "dependencies": {
@@ -100,7 +107,7 @@
           }
         }
       },
-      "github:angular/bower-angular-messages@1.5.0": {
+      "github:angular/bower-angular-messages@1.5.6": {
         "main": "angular-messages",
         "registry": "jspm",
         "dependencies": {
@@ -115,7 +122,7 @@
           }
         }
       },
-      "github:angular/bower-angular-route@1.5.0": {
+      "github:angular/bower-angular-route@1.5.6": {
         "main": "angular-route",
         "registry": "jspm",
         "dependencies": {
@@ -130,7 +137,7 @@
           }
         }
       },
-      "github:angular/bower-angular@1.5.0": {
+      "github:angular/bower-angular@1.5.6": {
         "main": "angular",
         "meta": {
           "angular.js": {
@@ -194,7 +201,7 @@
           }
         }
       },
-      "github:firebase/firebase-bower@2.4.1": {
+      "github:firebase/firebase-bower@2.4.2": {
         "main": "firebase",
         "registry": "jspm"
       },
@@ -452,13 +459,33 @@
           }
         }
       },
-      "npm:babel-runtime@5.8.35": {
-        "main": false,
-        "dependencies": {},
-        "optionalDependencies": {
-          "core-js": "^1.2.0"
-        }
+      "npm:inherits@2.0.1": {
+        "ignore": [
+          "test.js"
+        ]
       }
     }
-  }
+  },
+  "scripts": {
+    "build": "./bin/build",
+    "build:gh-pages": "./bin/build-gh-pages",
+    "clean": "test -d $npm_package_config_build_dir && rm -r $npm_package_config_build_dir || echo 'Nothing to clean.'",
+    "keygen": "openssl req -x509 -nodes -newkey rsa:4096 -new -days 1024 -subj \"/C=SG/ST=Denial/L=Singapore/O=Dis/CN=localhost\" -keyout bin/localhost.key -out bin/localhost.cert",
+    "lint": "eslint src/ && jscs src/",
+    "postinstall": "jspm install",
+    "serve": "./bin/server.js src/",
+    "serve-build": "./bin/server.js dist/${npm_package_name}",
+    "start": "./bin/server.js src/",
+    "test": "./bin/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singpath/singpath-core.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/singpath/singpath-core/issues"
+  },
+  "homepage": "https://github.com/singpath/singpath-core#readme"
 }
