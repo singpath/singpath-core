@@ -12,5 +12,5 @@ cleanup() {
 trap cleanup EXIT
 mkdir -p "${DEST}/"
 
-jspm build tests.js "${BUNDLE}"
+jspm build tests.js "${BUNDLE}" --skip-rollup --format cjs
 mocha --require source-map-support/register "${BUNDLE}"
