@@ -11,6 +11,8 @@
  * 5. open svgdefs.svg and rename all icon ids from "icon-something" to just
  *    "something"
  *
+ * The language icons are from https://github.com/konpa/devicon
+ *
  * The set is now ready.
  */
 
@@ -25,17 +27,17 @@ const langIcons = [{
   title: 'language:python',
   url: 'icons/icons-python.svg',
   tmpl: pythonTmpl,
-  vb: 120
+  vb: 128
 }, {
   title: 'language:angularjs',
   url: 'icons/icons-angularjs.svg',
   tmpl: angularjsTmpl,
-  vb: 120
+  vb: 128
 }, {
   title: 'language:javascript',
   url: 'icons/icons-javascript.svg',
   tmpl: javascriptTmpl,
-  vb: 630
+  vb: 128
 }, {
   title: 'language:java',
   url: 'icons/icons-java.svg',

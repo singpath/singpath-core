@@ -30,7 +30,7 @@ describe('icon sets', function() {
 
     it('should register angularjs icon', function() {
       expect(mdIconProvider.icon).to.have.been.calledWith(
-        'language:angularjs', 'icons/icons-angularjs.svg', 120
+        'language:angularjs', 'icons/icons-angularjs.svg', 128
       );
     });
 
@@ -42,13 +42,13 @@ describe('icon sets', function() {
 
     it('should register javascript icon', function() {
       expect(mdIconProvider.icon).to.have.been.calledWith(
-        'language:javascript', 'icons/icons-javascript.svg', 630
+        'language:javascript', 'icons/icons-javascript.svg', 128
       );
     });
 
     it('should register python icon', function() {
       expect(mdIconProvider.icon).to.have.been.calledWith(
-        'language:python', 'icons/icons-python.svg', 120
+        'language:python', 'icons/icons-python.svg', 128
       );
     });
 
