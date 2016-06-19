@@ -12,6 +12,10 @@ class Controller {
     spfNavBarService.update('Icons');
 
     this.icons = [
+      'language:python',
+      'language:java',
+      'language:javascript',
+      'language:angularjs',
       'add',
       'add-circle-outline',
       'arrow-back',
